@@ -211,7 +211,7 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     #Required
     compartment_id = var.compartment_ocid
     display_name = "lb-wbsrv-ha"
-    shape = "10 Mbps"    # = "10Mbps-Micro"
+    shape = "10"    # = "10Mbps-Micro"
     subnet_ids = [oci_core_subnet.tcb_subnet.id]
 
     #Optional
