@@ -198,7 +198,7 @@ resource "oci_load_balancer_backend_set" "backend_set" {
         # retries = var.backend_set_health_checker_retries
         # return_code = var.backend_set_health_checker_return_code
         # timeout_in_millis = var.backend_set_health_checker_timeout_in_millis
-        # url_path = var.backend_set_health_checker_url_path
+        url_path = "/"    # var.backend_set_health_checker_url_path
     }
     load_balancer_id = oci_load_balancer_load_balancer.load_balancer.id
     name = "backend-wbsrv-ha"
