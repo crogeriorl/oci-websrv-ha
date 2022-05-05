@@ -117,7 +117,7 @@ resource "oci_core_instance_configuration" "instance_config" {
     #Required
     compartment_id = var.compartment_ocid
 
-    defined_tags = {"Environm":"testes", "Name": "HA-Niture"}
+    # defined_tags = {"Environm":"testes"}   erro!!
     display_name = "inst-config-tcb-wbsrv"
 
     instance_details {
@@ -211,7 +211,7 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     #Required
     compartment_id = var.compartment_ocid
     display_name = "lb-wbsrv-ha"
-    shape = "Flexible"    # = "10Mbps-Micro" ??
+    shape = "10Mbps-Micro"    # = "Flexible"
     subnet_ids = [oci_core_subnet.tcb_subnet.id]
 
     #Optional
@@ -220,15 +220,15 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     # ip_mode = "IPV4"
     is_private = "false"
     # network_security_group_ids = var.load_balancer_network_security_group_ids
-    reserved_ips {
+    # reserved_ips {
         #Optional
-        #id = var.load_balancer_reserved_ips_id
-    }
-    shape_details {
-      #Required
-      maximum_bandwidth_in_mbps = "10"
-      minimum_bandwidth_in_mbps = "10"
-    }
+        # id = var.load_balancer_reserved_ips_id
+    # }
+    # shape_details {
+        #Required
+        # maximum_bandwidth_in_mbps = "10"
+        # minimum_bandwidth_in_mbps = "10"
+    # }
 }
 
 
