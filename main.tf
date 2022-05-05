@@ -159,7 +159,7 @@ resource "oci_core_instance_pool" "instance_pool" {
     #Required
     display_name = "inst-pool-ha-wbsrv"
     compartment_id = var.compartment_ocid
-    instance_configuration_id = oci_core_instance_configuration.instance_configuration.id
+    instance_configuration_id = oci_core_instance_configuration.instance_config.id
     size = "2"
     
     placement_configurations {
@@ -179,7 +179,7 @@ resource "oci_core_instance_pool" "instance_pool" {
         #Required
         backend_set_name = oci_load_balancer_backend_set.backend_set.name
         load_balancer_id = oci_load_balancer_load_balancer.load_balancer.id
-        port = oci_load_balancer_backend_set.backend_set.health_checker.port
+        port = oci_load_balancer_backend_set.backend_set.health_checker[0].port
         vnic_selection = oci_core_instance_configuration.instance_config.instance_details.launch_details.create_vnic_details.display_name
     }
 }
