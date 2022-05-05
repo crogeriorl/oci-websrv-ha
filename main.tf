@@ -149,10 +149,9 @@ resource "oci_core_instance_configuration" "instance_config" {
 
       }
 
-      source = NONE
-
     }
 
+    source = NONE
 }
 
 
