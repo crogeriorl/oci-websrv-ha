@@ -213,7 +213,7 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     compartment_id = var.compartment_ocid
     display_name = "lb-wbsrv-ha"
     shape = "10Mbps-Micro"   # = "Flexible"
-    subnet_ids = {oci_core_subnet.tcb_subnet.id}
+    subnet_ids = oci_core_subnet.tcb_subnet.id
 
     #Optional
     # defined_tags = {"Operations.CostCenter"= "42"}
