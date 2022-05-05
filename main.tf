@@ -237,8 +237,8 @@ resource "oci_load_balancer_listener" "listener" {
     default_backend_set_name = oci_load_balancer_backend_set.backend_set.name
     load_balancer_id = oci_load_balancer_load_balancer.load_balancer.id
     name = "lstnr-wbsrv-ha"
-    port = oci_core_instance_pool.instance_pool.load_balancers.port
-    protocol = oci_load_balancer_backend_set.backend_set.health_checker.protocol
+    port = oci_core_instance_pool.instance_pool.load_balancers[0].port
+    protocol = oci_load_balancer_backend_set.backend_set.health_checker[0].protocol
 
     #Optional
     connection_configuration {
