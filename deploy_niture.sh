@@ -21,3 +21,6 @@ sudo unzip oci-f-handson-modulo-compute-website-files.zip
 sudo chown -R apache:apache /var/www/html
 
 sudo rm -rf oci-f-handson-modulo-compute-website-files.zip
+
+# Inclui host e IP na pagina index.html
+sudo sed -i '119i '"<h1><br><FONT COLOR="#FF0000">$(hostname -f) - $(hostname -i)</FONT><br></h1>"'' /var/www/html/index.html

@@ -1,0 +1,5 @@
+
+- define/create vcn/subnets, dhcp options, int. gateway, route table/ routes, security lists
+- create instance config for the webservers (backend)
+- create a app load balancer - http (backend sets, listerner, logs)
+- create instance pool server for backend servers and attach the LB
