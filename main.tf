@@ -180,7 +180,7 @@ resource "oci_core_instance_pool" "instance_pool" {
         backend_set_name = oci_load_balancer_backend_set.backend_set.name
         load_balancer_id = oci_load_balancer_load_balancer.load_balancer.id
         port = oci_load_balancer_backend_set.backend_set.health_checker[0].port
-        vnic_selection = oci_core_instance_configuration.instance_config.instance_details[0].launch_details.create_vnic_details.display_name
+        vnic_selection = oci_core_instance_configuration.instance_config.instance_details[0].launch_details[0].create_vnic_details[0].display_name
     }
 }
 
@@ -253,30 +253,4 @@ resource "oci_load_balancer_listener" "listener" {
     # routing_policy_name = oci_load_balancer_load_balancer_routing_policy.test_load_balancer_routing_policy.name
     # rule_set_names = [oci_load_balancer_rule_set.test_rule_set.name]
 
-}
-
-
-### EXCLUIR
-resource "oci_core_instance" "webserver1" {
-  availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = var.compartment_ocid
-  display_name        = "webserver1"
-  shape               = "VM.Standard.E2.1.Micro"
-
-  create_vnic_details {
-    subnet_id        = oci_core_subnet.tcb_subnet.id
-    display_name     = "primaryvnic"
-    assign_public_ip = true
-    hostname_label   = "webserver1"
-  }
-
-  source_details {
-    source_type = "image"
-    source_id   = var.images[var.region]
-  }
-
-  metadata = {
-    ssh_authorized_keys = var.ssh_public_key
-    user_data = filebase64("./deploy_niture.sh")
-  }
 }
