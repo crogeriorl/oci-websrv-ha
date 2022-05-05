@@ -226,8 +226,8 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     # }
     shape_details {
       #Required
-      maximum_bandwidth_in_mbps = "5"
-      minimum_bandwidth_in_mbps = "5"
+      maximum_bandwidth_in_mbps = "10"
+      minimum_bandwidth_in_mbps = "10"
     }
 }
 
