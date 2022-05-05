@@ -224,11 +224,11 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
         #Optional
         #id = var.load_balancer_reserved_ips_id
     }
-    # shape_details {
-        #Required
-        # maximum_bandwidth_in_mbps = "10"
-        # minimum_bandwidth_in_mbps = "10"
-    # }
+    shape_details {
+      #Required
+      maximum_bandwidth_in_mbps = "10"
+      minimum_bandwidth_in_mbps = "10"
+    }
 }
 
 
