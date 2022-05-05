@@ -5,11 +5,12 @@ sudo yum install httpd -y
 sudo apachectl start
 sudo systemctl enable httpd
 
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+
+#$ The commands below don't worked on cloud-init script for OCI Oracle-Linux-7.9-2020.10.26-0
 #sudo firewall-cmd --zone=public --add-service=http
 #sudo firewall-cmd --permanent --zone=public --add-service=http
-
-sudo systemctl stop firewalld
-sudo systemctl desable firewalld
 
 cd /var/www/html/
 
