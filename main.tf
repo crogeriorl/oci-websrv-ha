@@ -180,7 +180,7 @@ resource "oci_core_instance_pool" "instance_pool" {
         #Required
         backend_set_name = oci_load_balancer_backend_set.backend_set.name
         load_balancer_id = oci_load_balancer_load_balancer.load_balancer.id
-        port = "80"
+        port = oci_load_balancer_backend_set.backend_set.health_checker.port
         vnic_selection = oci_core_instance_configuration.instance_config.instance_details.launch_details.create_vnic_details.display_name
     }
 }
@@ -194,7 +194,7 @@ resource "oci_load_balancer_backend_set" "backend_set" {
 
         #Optional
         # interval_ms = var.backend_set_health_checker_interval_ms
-        port = oci_core_instance_pool.instance_pool.load_balancers.port
+        port = "80"
         # response_body_regex = var.backend_set_health_checker_response_body_regex
         # retries = var.backend_set_health_checker_retries
         # return_code = var.backend_set_health_checker_return_code
