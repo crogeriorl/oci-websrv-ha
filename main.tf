@@ -138,7 +138,7 @@ resource "oci_core_instance_configuration" "instance_config" {
           create_vnic_details {
               subnet_id        = oci_core_subnet.tcb_subnet.id
               assign_public_ip = true
-              display_name     = "vnic0"
+              display_name     = "primaryvnic"
               hostname_label   = "webserver"
           }
 
