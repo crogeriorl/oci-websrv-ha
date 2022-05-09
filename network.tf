@@ -19,7 +19,7 @@ resource "oci_core_subnet" "subnet_priv" {
 
 resource "oci_core_internet_gateway" "internet_gateway" {
   compartment_id = var.compartment_ocid
-  display_name   = "tcbIG"
+  display_name   = "IGW"
   vcn_id         = oci_core_virtual_network.main_vcn.id
 }
 
