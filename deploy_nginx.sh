@@ -15,4 +15,4 @@ sudo systemctl disable firewalld
 
 # Inclui host e IP na pagina index.html
 
-sudo sed -i '24i '"<h3><br><FONT COLOR="#0000FF">$(hostname -f) - ip: $(hostname -i)</FONT><br></h3>"'' /var/www/html/index.nginx-debian.html
+sudo sed -i '24i '"<h3><br><FONT COLOR="#0000FF">Load Balancer + H.A. / $(hostname -f) - IP: $(hostname -i)</FONT><br></h3>"'' /var/www/html/index.nginx-debian.html
