@@ -2,7 +2,7 @@
 resource "oci_core_security_list" "security_list" {
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_virtual_network.main_vcn.id
-  display_name   = "tcbSecurityList"
+  display_name   = "SecurityList1"
 
   egress_security_rules {
     protocol    = "6"

@@ -9,7 +9,7 @@ resource "oci_core_virtual_network" "main_vcn" {
 resource "oci_core_subnet" "subnet_priv" {
   cidr_block        = "10.1.20.0/24"
   display_name      = "Subnet_priv"
-  dns_label         = "subnet_priv"
+  dns_label         = "subnetpriv"
   security_list_ids = [oci_core_security_list.security_list.id]
   compartment_id    = var.compartment_ocid
   vcn_id            = oci_core_virtual_network.main_vcn.id
@@ -26,7 +26,7 @@ resource "oci_core_internet_gateway" "internet_gateway" {
 resource "oci_core_route_table" "route_table" {
   compartment_id = var.compartment_ocid
   vcn_id         = oci_core_virtual_network.main_vcn.id
-  display_name   = "main-RouteTable"
+  display_name   = "route_table1"
 
   route_rules {
     destination       = "0.0.0.0/0"
