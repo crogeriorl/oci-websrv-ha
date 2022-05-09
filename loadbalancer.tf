@@ -26,7 +26,7 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     compartment_id = var.compartment_ocid
     display_name = "lb-websrv-ha"
     shape = "flexible"    # = "lb-flexible-count"
-    subnet_ids = [oci_core_subnet.tcb_subnet.id]
+    subnet_ids = [oci_core_subnet.subnet_priv.id]
 
     #Optional
     # defined_tags = {"Operations.CostCenter"= "42"}
