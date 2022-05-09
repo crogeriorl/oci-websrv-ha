@@ -2,8 +2,8 @@
 resource "oci_core_virtual_network" "main_vcn" {
   cidr_block     = "10.1.0.0/16"
   compartment_id = var.compartment_ocid
-  display_name   = "main-VCN"
-  dns_label      = "main-vcn"
+  display_name   = "mainVCN"
+  dns_label      = "mainvcn"
 }
 
 resource "oci_core_subnet" "subnet_priv" {
