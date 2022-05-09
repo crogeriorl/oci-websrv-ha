@@ -30,7 +30,7 @@ resource "oci_core_instance_configuration" "instance_config" {
 
           metadata = {
             ssh_authorized_keys = var.ssh_public_key
-            user_data = filebase64("./deploy_niture.sh")
+            user_data = filebase64("./deploy_nginx.sh")
           }
 
       }
