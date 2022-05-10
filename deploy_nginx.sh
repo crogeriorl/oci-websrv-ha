@@ -27,7 +27,7 @@ sudo wget https://raw.githubusercontent.com/crogeriorl/NGINX-Demos/master/nginx-
 
 # Insert some text, host and IP within index.html
 
-sudo sed -i '88i '"<h1><br><FONT COLOR="#0000FF"><center>## OCI - Always Free: 2 VMs w/ Load Balancer + H.A.</center></FONT><br></h3>"'' /usr/share/nginx/html/index.html
+sudo sed -i '88i '"<h1><br><FONT COLOR="#0000FF"><center>## OCI - Always Free: 2 Webservers w/ Load Balancer + H.A.</center></FONT><br></h3>"'' /usr/share/nginx/html/index.html
 sudo sed -i '88i '"<h3><br><FONT COLOR="#0000FF"><center>$(hostname -f) - IP: $(hostname -i)</center></FONT><br></h3>"'' /usr/share/nginx/html/index.html
 
 

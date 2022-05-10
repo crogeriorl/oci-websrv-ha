@@ -22,7 +22,7 @@ resource "oci_core_instance_configuration" "instance_config" {
           }
 
           create_vnic_details {
-              subnet_id        = oci_core_subnet.subnet_priv.id
+              subnet_id        = oci_core_subnet.subnet_publ.id
               assign_public_ip = true
               display_name     = "primaryvnic"
               hostname_label   = "webserver"
@@ -51,7 +51,7 @@ resource "oci_core_instance_pool" "instance_pool" {
     placement_configurations {
         #Required
         availability_domain = data.oci_identity_availability_domain.ad.name
-        primary_subnet_id = oci_core_subnet.subnet_priv.id
+        primary_subnet_id = oci_core_subnet.subnet_publ.id
 
         #Optional
         # fault_domains = var.instance_pool_placement_configurations_fault_domains
