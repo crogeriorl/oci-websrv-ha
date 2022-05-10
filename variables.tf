@@ -23,8 +23,28 @@ variable "images" {
   default = {
     # See https://docs.us-phoenix-1.oraclecloud.com/images/
     # Oracle-provided image "Oracle-Linux-7.9-2020.10.26-0"
-    us-phoenix-1   = "ocid1.image.oc1.phx.aaaaaaaacirjuulpw2vbdiogz3jtcw3cdd3u5iuangemxq5f5ajfox3aplxa"
-    us-ashburn-1   = "ocid1.image.oc1.iad.aaaaaaaabbg2rypwy5pwnzinrutzjbrs3r35vqzwhfjui7yibmydzl7qgn6a"
-    sa-saopaulo-1   = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaaudio63gdicxwujhfok7jdyewf6iwl6sgcaqlyk4fvttg3bw6gbpq"
+    us-phoenix-1  = "ocid1.image.oc1.phx.aaaaaaaacirjuulpw2vbdiogz3jtcw3cdd3u5iuangemxq5f5ajfox3aplxa"
+    us-ashburn-1  = "ocid1.image.oc1.iad.aaaaaaaabbg2rypwy5pwnzinrutzjbrs3r35vqzwhfjui7yibmydzl7qgn6a"
+    sa-saopaulo-1 = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaaudio63gdicxwujhfok7jdyewf6iwl6sgcaqlyk4fvttg3bw6gbpq"
   }
+}
+
+variable "vcn_cidr_block" {
+  default = "10.0.0.0/16"
+}
+
+variable "subnpubl_cidr" {
+  default =  "10.0.11.0/24"
+}
+
+variable "oci_vm_shape" {
+  default = "VM.Standard.E2.1.Micro"
+}
+
+variable "hostname_label" {
+  default = "webserver"
+}
+
+variable "conf_pool_size" {
+  default = "2"
 }

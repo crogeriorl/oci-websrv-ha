@@ -8,7 +8,7 @@ sudo yum install nginx -y
 
 #sudo firewall-cmd --zone=public --add-service=http
 #sudo firewall-cmd --permanent --zone=public --add-service=http
-
+# Don't do this in production sites!
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 
@@ -20,6 +20,7 @@ sudo rm -rf hello.conf
 sudo wget https://raw.githubusercontent.com/crogeriorl/NGINX-Demos/master/nginx-hello/hello.conf
 
 cd /usr/share/nginx/html/
+# Put your website or app here!
 sudo mv index.html index.html.orig
 sudo rm -rf index.html
 sudo wget https://raw.githubusercontent.com/crogeriorl/NGINX-Demos/master/nginx-hello/index.html

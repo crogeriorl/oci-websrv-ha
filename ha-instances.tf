@@ -13,8 +13,8 @@ resource "oci_core_instance_configuration" "instance_config" {
       launch_details {
           availability_domain = data.oci_identity_availability_domain.ad.name
           compartment_id      = var.compartment_ocid
-          display_name        = "webserver"
-          shape               = "VM.Standard.E2.1.Micro"
+          display_name        = var.hostname_label
+          shape               = var.oci_vm_shape
           
           source_details {
             source_type = "image"
@@ -25,7 +25,7 @@ resource "oci_core_instance_configuration" "instance_config" {
               subnet_id        = oci_core_subnet.subnet_publ.id
               assign_public_ip = true
               display_name     = "primaryvnic"
-              hostname_label   = "webserver"
+              hostname_label   = var.hostname_label
           }
 
           metadata = {
@@ -46,7 +46,7 @@ resource "oci_core_instance_pool" "instance_pool" {
     display_name = "instance-pool-websrv"
     compartment_id = var.compartment_ocid
     instance_configuration_id = oci_core_instance_configuration.instance_config.id
-    size = "2"
+    size = var.conf_pool_size
     
     placement_configurations {
         #Required

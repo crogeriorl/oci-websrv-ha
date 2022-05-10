@@ -29,8 +29,6 @@ resource "oci_load_balancer_load_balancer" "load_balancer" {
     subnet_ids = [oci_core_subnet.subnet_publ.id]
 
     #Optional
-    # defined_tags = {"Operations.CostCenter"= "42"}
-    # freeform_tags = {"Department"= "Finance"}
     # ip_mode = "IPV4"
     is_private = "false"
     # network_security_group_ids = var.load_balancer_network_security_group_ids

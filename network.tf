@@ -1,13 +1,13 @@
 
 resource "oci_core_virtual_network" "main_vcn" {
-  cidr_block     = "10.0.0.0/16"
+  cidr_block     = var.vcn_cidr_block
   compartment_id = var.compartment_ocid
   display_name   = "mainVCN"
   dns_label      = "mainvcn"
 }
 
 resource "oci_core_subnet" "subnet_publ" {
-  cidr_block        = "10.0.11.0/24"
+  cidr_block        = var.subnpubl_cidr
   display_name      = "Subnet_publ"
   dns_label         = "subnetpubl"
   security_list_ids = [oci_core_security_list.security_list.id]
