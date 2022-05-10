@@ -4,7 +4,7 @@ The environment is deployed with Terraform / Terraform Cloud and bash shell scri
 
 The credentials and secrets for login authentication and authorization in OCI - variables listed in variables.tf file with empty { } - must be setting in the Terraform Cloud project workspace (Terraform Variables).
 
-No more than 5 minutes to get up your web application or web site with high availability, self-healing and load balanced, all them free in the OCI.
+No more than 5 minutes to get up your web application or web site with high availability, self-healing and load balancing, all them free in the OCI.
 
 -----------------------------------------------------------------------------------------------------
 OBS: Many security, networking and automation features wasn't implemented in this project due to cloud provider's always free tier constraints, but which should be considered in production environments.
