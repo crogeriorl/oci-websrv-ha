@@ -46,5 +46,5 @@ variable "hostname_label" {
 }
 
 variable "conf_pool_size" {
-  default = "2"
+  default = "3"
 }
