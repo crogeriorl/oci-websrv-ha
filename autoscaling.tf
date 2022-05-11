@@ -1,4 +1,4 @@
-resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuration" {
+resource "oci_autoscaling_auto_scaling_configuration" "test_auto_scaling_configuration" {
     #Required
     auto_scaling_resources {
         #Required
