@@ -6,5 +6,8 @@ The credentials and secrets for login authentication and authorization in OCI - 
 
 No more than 5 minutes to get up your web application or web site with high availability, self-healing and load balancing, all them free in the OCI.
 
+
+May/11/2022:  Updated project to add auto scaling features, but still limited at 2 instances for always free tier.
+
 -----------------------------------------------------------------------------------------------------
 OBS: Many security, networking and automation features wasn't implemented in this project due to cloud provider's always free tier constraints, but which should be considered in production environments.
