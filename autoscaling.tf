@@ -18,8 +18,8 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
         display_name = "autoscaling_CPU_usage_policy"
         is_enabled   = "true"
         
+        # Scaling Out
         rules {
-            # Scaling Out
             action {
                 type = "SCALE_OUT"
                 value = "1"
@@ -32,12 +32,15 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
                     value    = "70"     # percentage
                 }
             }
-            # Scaling In
+        }
+
+        # Scaling In
+        rules {
             action {
                 type = "SCALE_IN"
                 value = "-1"
             }
-            display_name = "scalein_policy_rule"
+            #display_name = "scalein_policy_rule"
             metric {
                 metric_type = "cpu_utilization"
                 threshold {
@@ -45,7 +48,6 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
                     value    = "30"
                 }
             }
-        # rules
         }
     # policies
     }
