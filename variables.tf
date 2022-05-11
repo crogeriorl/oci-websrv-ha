@@ -45,17 +45,18 @@ variable "hostname_label" {
   default = "webserver"
 }
 
-# AutoScaling metric type
+# Auto Scaling metric type
 variable asc_rules_metric_type {
   default = "CPU_UTILIZATION"
 }
 
-# To test load balancing, set all variables bellow at 2 size.
-variable "conf_pool_size" {
-  default = "2"
+## Auto Scaling number of instances
+variable "max_pool_size" {
+  default = "3"
 }
 
-variable "max_pool_size" {
+# to test load balancing, set all variables bellow to size 2.
+variable "conf_pool_size" {
   default = "2"
 }
 
