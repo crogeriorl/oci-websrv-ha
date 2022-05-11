@@ -1,9 +1,9 @@
-resource "oci_autoscaling_auto_scaling_configuration" "test_auto_scaling_configuration" {
+resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuration" {
     #Required
     auto_scaling_resources {
         #Required
         id   = oci_core_instance_pool.instance_pool.id
-        type = "instancePool"
+        type = "instancepool"
     }
     compartment_id = var.compartment_ocid
     policies {
