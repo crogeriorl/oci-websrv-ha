@@ -60,5 +60,5 @@ variable "max_pool_size" {
 }
 
 variable "min_pool_size" {
-  default = "1"
+  default = "2"
 }
