@@ -7,7 +7,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
     }
     compartment_id = var.compartment_ocid
     policies {
-        display_name = "autoscaling-CPUusage-policy"
+        display_name = "autoscaling-threshold-policy"
         is_enabled   = "true"
  
         capacity {
