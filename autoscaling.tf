@@ -26,7 +26,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
                 value = "1"
             }
             metric {
-                metric_type = "cpu_utilization"
+                metric_type = "cpuutilization"
                 threshold {
                     operator = "GT"     # Greater Than
                     value    = "70"     # percentage
@@ -42,7 +42,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
                 value = "-1"
             }
             metric {
-                metric_type = "cpu_utilization"
+                metric_type = "cpuutilization"
                 threshold {
                     operator = "LT"
                     value    = "30"
