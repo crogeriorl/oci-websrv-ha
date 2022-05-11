@@ -46,5 +46,13 @@ variable "hostname_label" {
 }
 
 variable "conf_pool_size" {
+  default = "1"
+}
+
+variable "max_pool_size" {
   default = "2"
+}
+
+variable "min_pool_size" {
+  default = "1"
 }

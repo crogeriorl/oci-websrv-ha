@@ -11,9 +11,9 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
         policy_type = "threshold"
 
         capacity {
-            initial = "1"
-            max     = "2"
-            min     = "1"
+            initial = var.conf_pool_size
+            max     = var.max_pool_size
+            min     = var.min_pool_size
         }
         display_name = "autoscaling_CPU_usage_policy"
         is_enabled   = "true"
