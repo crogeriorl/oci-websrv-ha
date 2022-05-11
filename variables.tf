@@ -50,7 +50,7 @@ variable asc_rules_metric_type {
 }
 
 variable "conf_pool_size" {
-  default = "1"
+  default = "2"
 }
 
 variable "max_pool_size" {
