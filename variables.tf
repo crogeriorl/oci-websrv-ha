@@ -57,7 +57,7 @@ variable "max_pool_size" {
 
 # to test load balancing, set all variables bellow to size 2.
 variable "conf_pool_size" {
-  default = "1"
+  default = "2"
 }
 
 variable "min_pool_size" {

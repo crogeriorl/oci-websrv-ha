@@ -55,5 +55,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
     #Optional
     cool_down_in_seconds = "300"   # default
     display_name = "autoscaling-config1"
-    is_enabled   = "true"
+
+    # Set "true" to enable Auto Scaling
+    is_enabled   = "false"
 }
