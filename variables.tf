@@ -45,6 +45,10 @@ variable "hostname_label" {
   default = "webserver"
 }
 
+variable asc_rules_metric_type {
+  default = "CpuUtilization"
+}
+
 variable "conf_pool_size" {
   default = "1"
 }
