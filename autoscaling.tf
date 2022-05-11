@@ -3,7 +3,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
     auto_scaling_resources {
         #Required
         id   = oci_core_instance_pool.instance_pool.id
-        type = "instancepool"
+        type = "instancePool"
     }
     compartment_id = var.compartment_ocid
     policies {
@@ -26,7 +26,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
                 value = "1"
             }
             metric {
-                metric_type = "cpuutilization"
+                metric_type = var.asc_rules_metric_type
                 threshold {
                     operator = "GT"     # Greater Than
                     value    = "70"     # percentage
@@ -42,7 +42,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
                 value = "-1"
             }
             metric {
-                metric_type = "cpuutilization"
+                metric_type = var.asc_rules_metric_type
                 threshold {
                     operator = "LT"
                     value    = "30"
