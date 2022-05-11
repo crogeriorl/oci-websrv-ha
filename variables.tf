@@ -46,7 +46,7 @@ variable "hostname_label" {
 }
 
 variable asc_rules_metric_type {
-  default = "CpuUtilization"
+  default = "CPU_UTILIZATION"
 }
 
 variable "conf_pool_size" {

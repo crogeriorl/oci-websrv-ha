@@ -7,22 +7,23 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
     }
     compartment_id = var.compartment_ocid
     policies {
-        #Required
-        policy_type = "Threshold"
-
+        display_name = "autoscaling-CPUusage-policy"
+        is_enabled   = "true"
+ 
         capacity {
             initial = var.conf_pool_size
             max     = var.max_pool_size
             min     = var.min_pool_size
         }
-        display_name = "autoscaling-CPUusage-policy"
-        is_enabled   = "true"
+
+        #Required
+        policy_type = "threshold"
         
         # Scaling Out
         rules {
             display_name = "scaleout-policy-rule"
             action {
-                type = "SCALE_OUT"
+                type = "CHANGE_COUNT_BY"
                 value = "1"
             }
             metric {
@@ -38,7 +39,7 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
         rules {
             display_name = "scalein-policy-rule"
             action {
-                type = "SCALE_IN"
+                type = "CHANGE_COUNT_BY"
                 value = "-1"
             }
             metric {
