@@ -52,14 +52,14 @@ variable asc_rules_metric_type {
 
 ## Auto Scaling number of instances
 variable "max_pool_size" {
-  default = "3"
+  default = "2"
 }
 
 # to test load balancing, set all variables bellow to size 2.
 variable "conf_pool_size" {
-  default = "2"
+  default = "1"
 }
 
 variable "min_pool_size" {
-  default = "2"
+  default = "1"
 }
