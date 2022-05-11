@@ -20,11 +20,11 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
         
         # Scaling Out
         rules {
+            display_name = "scaleout_policy_rule"
             action {
                 type = "SCALE_OUT"
                 value = "1"
             }
-            display_name = "scaleout_policy_rule"
             metric {
                 metric_type = "cpu_utilization"
                 threshold {
@@ -36,11 +36,11 @@ resource "oci_autoscaling_auto_scaling_configuration" "auto_scaling_configuratio
 
         # Scaling In
         rules {
+            display_name = "scalein_policy_rule"
             action {
                 type = "SCALE_IN"
                 value = "-1"
             }
-            #display_name = "scalein_policy_rule"
             metric {
                 metric_type = "cpu_utilization"
                 threshold {
