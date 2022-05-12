@@ -28,4 +28,35 @@ resource "oci_core_security_list" "security_list" {
       min = "80"
     }
   }
+  
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "3000"
+      min = "3000"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "8080"
+      min = "8080"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "50000"
+      min = "50000"
+    }
+  }
+  
 }
